@@ -1,2 +1,304 @@
 # alde.github.io
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokubetsu Massage</title>
+  <style>
+    :root {
+      --accent: #633e14;
+      --muted: #FFD700;
+      --bg: #633e14;
+      --logo-color: #FFD700;
+      --hero-box: #8b5a25;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    
+    html { scroll-behavior: smooth; } 
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--muted);
+    }
+
+    /* Semua teks jadi emas */
+    body, body * {
+      color: #FFD700 !important;
+    }
+
+    header {
+      background: var(--bg);
+      padding: 10px 0;
+      border-bottom: 1px solid #5a3810;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--logo-color);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      background: var(--hero-box);
+      padding: 36px 24px;
+      border-radius: 16px;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero .text {
+      flex: 1;
+      min-width: 260px;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      color: #FFD700;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      margin-bottom: 16px;
+      color: #FFD700;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* SLIDESHOW */
+    .slideshow {
+      flex: 1;
+      max-width: 450px;
+      height: 280px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Default: fokus ke bawah agar komposisi gambar pada umumnya bagus */
+      object-position: bottom;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      border-radius: 12px;
+    }
+
+    /* Pastikan gambar ke-3 selalu diposisikan di tengah */
+    .slideshow img:nth-child(3) {
+      object-position: center;
+    }
+    
+    .slideshow img.active {
+      opacity: 1;
+    }
+     
+    section {
+    margin-top: 40px;
+  }
+
+  h2 {
+    color: #FFD700;
+  }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #996e32;
+      padding: 14px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 6px;
+      color: #FFD700;
+    } 
+   
+    .contact-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+    background: var(--hero-box);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+  }
+
+  .contact-section div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .contact-section a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+    footer {
+      margin-top: 28px;
+      padding: 24px 0;
+      border-top: 1px solid #eee;
+      background: transparent;
+      text-align: center;
+    }
+
+    @media (min-width: 760px) {
+      .hero h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">TOKUBETSU MASSAGE</div>
+      <nav>
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#services">Layanan</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="Home" class="hero">
+      <div class="text">
+        <h1>Selamat Datang di Tokubetsu Massage & Spa</h1>
+        <p>Tokubetsu Massage & Spa hadir untuk Anda yang mencari terapi panggilan ke hotel, rumah, apartemen, dan lain-lain. Pemesanan mudah dengan estimasi pengiriman terapis cepat.</p>
+        <a href="https://wa.me/+6283160504476" class="cta">Hubungi: +62 831-6050-4476</a>
+      </div>
+
+      <div class="slideshow">
+        <img src="TOKUBETSU IMAGE/border-atas.jpg" alt="Spa 1" class="active">
+        <img src="TOKUBETSU IMAGE/border-atas2.jpg" alt="Spa 2">
+        <img src="TOKUBETSU IMAGE/border-atas3.jpg" alt="Spa 3"> 
+      </div>
+    </section>
+    
+    <section id="profile">
+      <h2>Profil Singkat</h2>
+      <p>Tokubetsu Massage & Spa adalah tempat relaksasi terbaik yang menghadirkan pengalaman pijat dan perawatan tubuh berkualitas untuk mengembalikan keseimbangan dan kebugaran Anda. Dengan suasana yang nyaman dan pelayanan profesional, kami menawarkan berbagai jenis pijat, mulai dari traditional massage, reflexology, aromatherapy, hingga hot stone massage yang dirancang untuk meredakan stres dan meningkatkan kesehatan tubuh.</p>
+    </section>
+
+    <section id="services" class="services">
+      <div class="card">
+        <h3>Pijat Seluruh Tubuh</h3>
+        <p>Pijat relaksasi & terapi untuk mengurangi pegal dan stres.</p>
+      </div>
+      <div class="card">
+        <h3>Pijat Refleksi</h3>
+        <p>Terapi refleksi untuk meningkatkan sirkulasi dan keseimbangan tubuh.</p>
+      </div>
+      <div class="card">
+        <h3>Lulur</h3>
+        <p>Perawatan tradisional untuk kulit lembut dan cerah.</p>
+      </div>
+      <div class="card">
+        <h3>Totok Wajah & Kerokan</h3>
+        <p>Perawatan wajah & kerokan untuk relaksasi ringan.</p>
+      </div>
+    </section>
+  
+    <section id="kontak">
+      <h2>Kontak & Lokasi</h2>
+      <div class="contact-section">
+        <div>
+          <strong>Alamat:</strong>
+          <span>Jl. Pasundan Balonggede, Kec. Regol, Kota Bandung, Jawa Barat</span>
+        </div>
+        <div>
+          <strong>Nomor Telepon:</strong>
+          <a href="tel:+62 831-6050-4476">+62 831-6050-4476</a>
+        </div>
+        <div>
+          <strong>Nomor WhatsApp:</strong>
+         <a href="https://wa.me/6283160504476?text=Halo%20Tokubetsu%20Massage%2C%20Saya%20Mau%20Reservasi%20Terapis%20Pijat%20Panggilan" target="_blank" rel="noopener" style="display:inline-block;padding:10px 16px;border-radius:8px;border:none;text-decoration:none;font-weight:600;">
+  📲 Reservasi via WhatsApp
+</a>
+
+        </div>
+        <div>
+          <strong>Email:</strong>
+          <a href="mailto:tokubetsumassage@gmail.com">tokubetsumassage@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tokubetsu Massage & Spa</p>
+  </footer>
+
+  <script>
+    // SLIDESHOW SCRIPT
+    const slides = document.querySelectorAll('.slideshow img');
+    let index = 0;
+
+    function nextSlide() {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }
+
+    setInterval(nextSlide, 3000); // Ganti gambar tiap 3 detik
+  </script>
+</body>
+</html>
